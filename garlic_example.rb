@@ -21,7 +21,7 @@ garlic do
       plugin('rspec-rails') { sh "script/generate rspec -f" }
       plugin 'resources_controller'
       plugin 'response_for'
-      plugin 'response_for_rc'
+      plugin 'response_for_rc', :clone => true
     end
   
     run do
