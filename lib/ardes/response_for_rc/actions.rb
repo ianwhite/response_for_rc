@@ -4,11 +4,15 @@ module Ardes#:nodoc:
     module Actions
       def self.included(base)
         base.class_eval do
-          response_for :index, :types => [:html, :js] do |format|
+          response_for :index do |format|
+            format.html
+            format.js
             format.xml  { render :xml => resources }
           end
           
-          response_for :show, :new, :edit, :types => [:html, :js] do |format|
+          response_for :show, :new, :edit do |format|
+            format.html
+            format.js
             format.xml  { render :xml => resource }
           end
           
@@ -42,11 +46,13 @@ module Ardes#:nodoc:
             end
           end
           
-          response_for :destroy, :types => [:js, :xml] do |format|
+          response_for :destroy do |format|
             format.html do
               flash[:notice] = "#{resource_name.humanize} was successfully destroyed."
               redirect_to resources_url
             end
+            format.js
+            format.xml
           end  
         end
       end
