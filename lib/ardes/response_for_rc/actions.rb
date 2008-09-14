@@ -4,33 +4,12 @@ module Ardes#:nodoc:
     module Actions
       def self.included(base)
         base.class_eval do
-          def index
-            self.resources = find_resources
-          end
-          
           response_for :index, :types => [:html, :js] do |format|
             format.xml  { render :xml => resources }
           end
           
-          def show
-            self.resource = find_resource
-          end
-
-          def new
-            self.resource = new_resource
-          end
-
-          def edit
-            self.resource = find_resource
-          end
-          
           response_for :show, :new, :edit, :types => [:html, :js] do |format|
             format.xml  { render :xml => resource }
-          end
-          
-          def create
-            self.resource = new_resource
-            resource.save
           end
           
           response_for :create do |format|
@@ -48,11 +27,6 @@ module Ardes#:nodoc:
             end
           end
           
-          def update
-            self.resource = find_resource
-            resource.update_attributes params[resource_name]
-          end
-          
           response_for :update do |format|
             if resource.saved?
               format.html do
@@ -68,10 +42,6 @@ module Ardes#:nodoc:
             end
           end
           
-          def destroy
-            self.resource = find_resource
-            resource.destroy
-          end
           response_for :destroy, :types => [:js, :xml] do |format|
             format.html do
               flash[:notice] = "#{resource_name.humanize} was successfully destroyed."
@@ -79,6 +49,37 @@ module Ardes#:nodoc:
             end
           end  
         end
+      end
+      
+      def index
+        self.resources = find_resources
+      end
+      
+      def show
+        self.resource = find_resource
+      end
+
+      def new
+        self.resource = new_resource
+      end
+
+      def edit
+        self.resource = find_resource
+      end
+      
+      def create
+        self.resource = new_resource
+        resource.save
+      end
+      
+      def update
+        self.resource = find_resource
+        resource.update_attributes params[resource_name]
+      end
+      
+      def destroy
+        self.resource = find_resource
+        resource.destroy
       end
     end
   end
