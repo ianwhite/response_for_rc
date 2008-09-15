@@ -4,8 +4,8 @@ garlic do
   # repo, give a url, specify :local to use a local repo (faster
   # and will still update from the origin url)
   repo 'rails', :url => 'git://github.com/rails/rails'#,  :local => "~/dev/vendor/rails"
-  repo 'rspec', :url => 'git://github.com/dchelimsky/rspec'#,  :local => "~/dev/vendor/rspec"
-  repo 'rspec-rails', :url => 'git://github.com/dchelimsky/rspec-rails'#, :local => "~/dev/vendor/rspec-rails"
+  repo 'rspec', :url => 'git://github.com/ianwhite/rspec'#,  :local => "~/dev/ianwhite/rspec"
+  repo 'rspec-rails', :url => 'git://github.com/ianwhite/rspec-rails'#, :local => "~/dev/ianwhite/rspec-rails"
   repo 'response_for', :url => 'git://github.com/ianwhite/response_for'#, :local => "~/dev/vendor/response_for"
   repo 'resources_controller', :url => 'git://github.com/ianwhite/resources_controller'#, :local => "~/dev/vendor/resources_controller"
   repo 'response_for', :path => '.'
@@ -25,8 +25,8 @@ garlic do
     end
   
     run do
-      cd "vendor/plugins/resources_controller" do
-        sh "rake spec:rcov:verify && rake spec:generate"
+      cd "vendor/plugins/response_for_rc" do
+        sh "rake spec"
       end
     end
   end
