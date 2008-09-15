@@ -8,7 +8,7 @@ garlic do
   repo 'rspec-rails', :url => 'git://github.com/ianwhite/rspec-rails'#, :local => "~/dev/ianwhite/rspec-rails"
   repo 'response_for', :url => 'git://github.com/ianwhite/response_for'#, :local => "~/dev/vendor/response_for"
   repo 'resources_controller', :url => 'git://github.com/ianwhite/resources_controller'#, :local => "~/dev/vendor/resources_controller"
-  repo 'response_for', :path => '.'
+  repo 'response_for_rc', :path => '.'
 
   # for target, default repo is 'rails', default branch is 'master'
   target 'edge'
