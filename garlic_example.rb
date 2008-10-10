@@ -26,7 +26,7 @@ garlic do
   
     run do
       cd "vendor/plugins/response_for_rc" do
-        sh "rake spec"
+        sh "rake spec && (cd ../resources_controller; rake spec:generate)"
       end
     end
   end
