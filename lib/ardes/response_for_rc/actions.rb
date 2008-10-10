@@ -2,19 +2,12 @@ module Ardes#:nodoc:
   module ResponseForRc#:nodoc:
     # actions using response_for
     module Actions
-      def self.included(base)
-        puts "#{base.name}: #{[instance_methods, action_responses.keys].inspect}\n --- mod: #{[instance_methods, action_responses.keys].inspect}\n\n"
-      end
+      extend Ardes::RcResponsesModule
       
-      
-      extend Ardes::ResponsesModule
-      extend Ardes::ResponseForRc::IncludeActions
-      
-
       def index
         self.resources = find_resources
       end
-      
+
       response_for :index do |format|
         format.html
         format.js

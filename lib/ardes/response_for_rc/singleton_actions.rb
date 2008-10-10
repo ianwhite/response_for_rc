@@ -2,8 +2,7 @@ module Ardes#:nodoc:
   module ResponseForRc#:nodoc:
     # singleton actions using response_for
     module SingletonActions
-      extend Ardes::ResponsesModule
-      extend Ardes::ResponseForRc::IncludeActions
+      extend Ardes::RcResponsesModule
             
       include Ardes::ResponseForRc::Actions
       
