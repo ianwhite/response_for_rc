@@ -1,6 +1,6 @@
 response_for_rc
 
-if you're using "resources_controller":http://github.com/ianwhite/resources_controller and "response_for":http://github.com/ianwhite/response_for, you probably want this!
+if you're using resources_controller[http://github.com/ianwhite/resources_controller] and response_for[http://github.com/ianwhite/response_for], you probably want this!
 
 == What is it?
 
@@ -55,6 +55,10 @@ Recent developments on response_for resources_controller, and now response_for_r
   end
   
   # if you want to set your own actions globally (as the default, look in init.rb to see how)
+  
+== Requirements
+
+You need resources_controller and response_for.
   
 == Specs
 
