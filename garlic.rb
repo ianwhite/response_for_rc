@@ -13,12 +13,12 @@ garlic do
   
   all_targets do
     prepare do
-      plugin 'ianwhite-rspec', :as => "rspec", :clone => true
-      plugin 'ianwhite-rspec-rails', :as => "rspec-rails", :clone => true do
+      plugin 'ianwhite-rspec', :as => "rspec"
+      plugin 'ianwhite-rspec-rails', :as => "rspec-rails" do
         sh "script/generate rspec -f"
       end
-      plugin 'resources_controller', :clone => true
-      plugin 'response_for', :clone => true
+      plugin 'resources_controller'
+      plugin 'response_for'
       plugin 'response_for_rc', :clone => true
     end
   
