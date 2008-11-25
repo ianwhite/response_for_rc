@@ -8,24 +8,25 @@ garlic do
   repo 'resources_controller', :url => 'git://github.com/ianwhite/resources_controller'
   repo 'response_for_rc', :path => '.'
 
-  target '2.2-stable', :branch => 'origin/2-2-stable'
-  target '2.1-stable', :branch => 'origin/2-1-stable'
+  ['origin/2-2-stable', 'origin/2-1-stable'].each do |rails|
   
-  all_targets do
-    prepare do
-      plugin 'ianwhite-rspec', :as => "rspec"
-      plugin 'ianwhite-rspec-rails', :as => "rspec-rails" do
-        sh "script/generate rspec -f"
+    target "Rails: #{rails}", :tree_ish => rails do
+      prepare do
+        plugin 'ianwhite-rspec', :as => "rspec"
+        plugin 'ianwhite-rspec-rails', :as => "rspec-rails" do
+          sh "script/generate rspec -f"
+        end
+        plugin 'resources_controller'
+        plugin 'response_for'
+        plugin 'response_for_rc', :clone => true
       end
-      plugin 'resources_controller'
-      plugin 'response_for'
-      plugin 'response_for_rc', :clone => true
-    end
   
-    run do
-      cd "vendor/plugins/response_for_rc" do
-        sh "rake spec && (cd ../resources_controller; rake spec:generate)"
+      run do
+        cd "vendor/plugins/response_for_rc" do
+          sh "rake spec && (cd ../resources_controller; rake spec:generate)"
+        end
       end
     end
+    
   end
 end
