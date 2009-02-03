@@ -2,8 +2,8 @@
 
 garlic do
   repo 'rails', :url => 'git://github.com/rails/rails'
-  repo 'ianwhite-rspec', :url => 'git://github.com/ianwhite/rspec'
-  repo 'ianwhite-rspec-rails', :url => 'git://github.com/ianwhite/rspec-rails'
+  repo 'rspec', :url => 'git://github.com/dchelimsky/rspec'
+  repo 'rspec-rails', :url => 'git://github.com/dchelimsky/rspec-rails'
   repo 'response_for', :url => 'git://github.com/ianwhite/response_for'
   repo 'resources_controller', :url => 'git://github.com/ianwhite/resources_controller'
   repo 'response_for_rc', :path => '.'
@@ -12,8 +12,8 @@ garlic do
   
     target "Rails: #{rails}", :tree_ish => rails do
       prepare do
-        plugin 'ianwhite-rspec', :as => "rspec"
-        plugin 'ianwhite-rspec-rails', :as => "rspec-rails" do
+        plugin 'rspec', :as => "rspec"
+        plugin 'rspec-rails', :as => "rspec-rails" do
           sh "script/generate rspec -f"
         end
         plugin 'resources_controller'
