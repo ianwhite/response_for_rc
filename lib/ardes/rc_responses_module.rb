@@ -16,9 +16,9 @@ module Ardes
     
     # when we clone, we need to copy our action_responses
     def clone
-      returning super do |mixin|
-        mixin.instance_variable_set('@action_responses', action_responses.clone)
-      end
+      c=super
+      c.instance_variable_set('@action_responses', action_responses.clone)
+      c
     end    
   end
 end
