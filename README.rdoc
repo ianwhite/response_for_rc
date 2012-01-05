@@ -1,6 +1,7 @@
 response_for_rc
 
-if you're using resources_controller[http://github.com/ianwhite/resources_controller] and response_for[http://github.com/ianwhite/response_for], you probably want this!
+if you're using resources_controller[http://github.com/ianwhite/resources_controller] and 
+response_for[http://github.com/ianwhite/response_for], you probably want this!
 
 == What is it?
 
@@ -8,7 +9,19 @@ It's an alternate set of RC actions, written in response_for style.
 
 == How to use it?
 
-Just drop it into your plugins directory.
+For Rails 3.0 and newer just add it to your Gemfile:
+
+  gem 'rails_rc'
+  gem 'response_for'
+  gem 'response_for_rc'
+  
+For older versions of rails you'll need to install the rails2 branch in vendor/plugins:
+
+  cd vendor/plugins
+  git clone git://github.com/ianwhite/response_for_rc.git
+  cd response_for_rc
+  git checkout rails2
+  rmdir -f .git
 
 == What else can I do with it?
 
