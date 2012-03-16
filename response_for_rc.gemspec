@@ -22,14 +22,11 @@ Gem::Specification.new do |s|
   s.rdoc_options     = ["--charset=UTF-8"]
   s.require_path     = "lib"
   
-  s.add_runtime_dependency "rc_rails", '=> 2.1'
-  s.add_runtime_dependency "response_for_rails", '=> 0.4'
+  s.add_runtime_dependency "rc_rails", '>= 2.1'
+  s.add_runtime_dependency "response_for_rails", '>= 0.4'
   s.add_runtime_dependency "rails", '>= 3.0.0'
   
-  s.add_development_dependency "rspec", '>= 2.5.0'
-  s.add_development_dependency "rspec-rails", '>= 2.5.0'
-  s.add_development_dependency 'sqlite3-ruby'
-  s.add_development_dependency "rspec-rails", '>= 2.5.0'
-  s.add_development_dependency 'rcov'
-  s.add_development_dependency 'yard'
+  s.add_development_dependency "rspec", '>= 2.8.0'
+  s.add_development_dependency "rspec-rails", '>= 2.8.0'
+  s.add_development_dependency 'sqlite3'
 end
