@@ -1,11 +1,11 @@
 # -*- encoding: utf-8 -*-
 
 $LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
-require 'ardes/response_for_rc/version'
-version = Ardes::ResponseForRc::VERSION::STRING
+require 'response_for_rc/version'
+version = ResponseForRc::VERSION
 
 Gem::Specification.new do |s|
-  s.name        = "response_for_rc"
+  s.name        = "response_for_rc_rails"
   s.version     = version
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ian White"]
@@ -22,8 +22,8 @@ Gem::Specification.new do |s|
   s.rdoc_options     = ["--charset=UTF-8"]
   s.require_path     = "lib"
   
-  s.add_runtime_dependency "resources_controller", '~> 2.0'
-  s.add_runtime_dependency "response_for", '~> 0.4'
+  s.add_runtime_dependency "rc_rails", '=> 2.1'
+  s.add_runtime_dependency "response_for_rails", '=> 0.4'
   s.add_runtime_dependency "rails", '>= 3.0.0'
   
   s.add_development_dependency "rspec", '>= 2.5.0'

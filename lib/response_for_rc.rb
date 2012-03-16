@@ -1,6 +1,14 @@
-require 'ardes/rc_responses_module'
-require 'ardes/response_for_rc/actions'
-require 'ardes/response_for_rc/singleton_actions'
+require 'response_for_rc/responses_module'
+require 'response_for_rc/actions'
+require 'response_for_rc/singleton_actions'
 
-Ardes::ResourcesController.actions = Ardes::ResponseForRc::Actions
-Ardes::ResourcesController.singleton_actions = Ardes::ResponseForRc::SingletonActions
+if defined? ResourcesController
+  ResourcesController.actions = ResponseForRc::Actions
+  ResourcesController.singleton_actions = ResponseForRc::SingletonActions
+end
+
+# BC
+module Ardes
+  ResponseForRc = ::ResponseForRc
+  RcResponsesModule = ::ResponseForRc::ResponsesModule
+end

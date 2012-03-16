@@ -11,10 +11,10 @@ It's an alternate set of RC actions, written in response_for style.
 
 For Rails 3.0 and newer just add it to your Gemfile:
 
-  gem 'rails_rc'
-  gem 'response_for'
   gem 'response_for_rc'
   
+This will install resources_controller and response_for.
+
 For older versions of rails you'll need to install the rails2 branch in vendor/plugins:
 
   cd vendor/plugins
@@ -31,8 +31,8 @@ is to add the responses (you need to stick it in self.included and add them on t
 Recent developments on response_for resources_controller, and now response_for_rc, mean you can now do stuff like this
 
   module MyActions
-    extend Ardes::RcResponsesModule # <= this baby gives your module the ability to understand response_for
-                                    # <= and to add responses to any including controller
+    extend RcResponseFor::ResponsesModule # <= this baby gives your module the ability to understand response_for
+                                          # <= and to add responses to any including controller
     def new
       # your new
     end
@@ -71,10 +71,5 @@ Recent developments on response_for resources_controller, and now response_for_r
   
 == Requirements
 
-You need resources_controller and response_for.
-  
-== Specs
-
-The garlic task runs all the RC specs with response_for_rc added as a plugin, this includes the 
-rspec scaffold specs.
+You need resources_controller (gem rc_rails) and response_for (gem response_for_rails).  These are installed for you if using bundler.
 

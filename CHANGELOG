@@ -1,1 +1,3 @@
+* 0.2.1 - Gemify [tahnks Josh Goebel], and remove Ardes module (bc ok)
+
 * response_for_rc - if you're using github resources_controller and response_for, you probably want this!

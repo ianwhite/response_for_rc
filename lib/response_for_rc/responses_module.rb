@@ -1,10 +1,10 @@
-module Ardes
-  # Just like ResponsesModule, but also handles the :except, :only options
-  module RcResponsesModule
-    include Ardes::ResourcesController::IncludeActions
+module ResponseForRc
+  # Just like ResponseFor::ResponsesModule, but also handles the :except, :only options
+  module ResponsesModule
+    include ResourcesController::IncludeActions
     
     def self.extended(mixin)
-      mixin.extend Ardes::ResponsesModule
+      mixin.extend ResponseFor::ResponsesModule
     end
     
     # as well as undefing an exlcuded action from the dup mixin, we
