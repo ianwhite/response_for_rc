@@ -1,3 +1,5 @@
+require 'resources_controller'
+require 'response_for'
 require 'response_for_rc/responses_module'
 require 'response_for_rc/actions'
 require 'response_for_rc/singleton_actions'
