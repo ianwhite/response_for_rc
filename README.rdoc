@@ -11,7 +11,7 @@ It's an alternate set of RC actions, written in response_for style.
 
 For Rails 3.0 and newer just add it to your Gemfile:
 
-  gem 'response_for_rc'
+  gem 'response_for_rc_rails'
   
 This will install resources_controller and response_for.
 
